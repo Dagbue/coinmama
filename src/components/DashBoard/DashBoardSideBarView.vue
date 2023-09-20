@@ -1,0 +1,536 @@
+<template v-if="authIsReady">
+  <div class="outer">
+
+<!--    <div v-if="user" class="sidebar" v-show="!mobile">-->
+
+<!--      <div class="logo">-->
+<!--        <img src="https://www.coinmama.com/next/coinmama.svg" alt="logo" class="afo-logo" />-->
+<!--      </div>-->
+
+<!--      <ul class="nav-list" >-->
+
+
+<!--        <router-link to="/over-view">-->
+<!--          <li>-->
+<!--            <a class="hover">-->
+<!--              <img src="@/assets/dashboardlogo.svg" alt="logo" class="link-img" />-->
+<!--              <span class="links-name">Dashboard</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="/wallets-management">-->
+<!--        <li>-->
+<!--          <a class="hover">-->
+<!--            <img src="../../assets/walletmana.svg" alt="logo" class="link-img" />-->
+<!--            <span class="links-name wallets">Wallets Management</span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        </router-link>-->
+
+
+<!--        <router-link to="/transactions">-->
+<!--        <li>-->
+<!--          <a class="hover">-->
+<!--            <img src="@/assets/send.svg" alt="logo" class="link-img" />-->
+<!--            <span class="links-name">Transactions</span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="/fund-wallet">-->
+<!--        <li>-->
+<!--          <a class="hover">-->
+<!--            <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />-->
+<!--            <span class="links-name">Fund Wallet</span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="/withdrawal">-->
+<!--        <li>-->
+<!--          <a class="hover">-->
+<!--            <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />-->
+<!--            <span class="links-name">Withdrawal</span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="">-->
+<!--          <li>-->
+<!--            <a class="hover">-->
+<!--              <img src="@/assets/pie-chart.svg" alt="logo" class="link-img" />-->
+<!--              <span class="links-name">Subscription Trade</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="/refer-users">-->
+<!--          <li>-->
+<!--            <a class="hover">-->
+<!--              <img src="../../assets/virtacc.svg" alt="logo" class="link-img" />-->
+<!--              <span class="links-name">Refer Users</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </router-link>-->
+
+
+<!--        <router-link to="/settings">-->
+<!--          <li>-->
+<!--            <a class="hover">-->
+<!--              <img src="../../assets/settings.svg" alt="logo" class="link-img" />-->
+<!--              <span class="links-name">Settings</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </router-link>-->
+
+<!--      </ul>-->
+
+<!--    </div>-->
+
+
+
+    <div v-if="user"  class="dropdown-nav-2" v-show="mobileNav" >
+
+<!--      <div class="icon-2">-->
+<!--        <i @click="toggleMobileNav" class='bx bx-menu' v-show="mobile" :class="{'icon-active' : mobileNav}"></i>-->
+<!--      </div>-->
+
+
+<!--      <i class='bx bx-user'></i>-->
+      <ul>
+        <li @click="toggleMobileNav2">
+          <a>
+            <i class='bx bxs-home' style="padding-right: 5px;font-size: 28px"></i>
+            <router-link to="/over-view" class="">My Account</router-link>
+          </a>
+        </li>
+        <li @click="toggleMobileNav2">
+          <a>
+<!--            <i class='bx bxs-user'></i>-->
+            <img src="https://www.coinmama.com/next/icons/buy_white.svg" alt="buy" style="padding-right: 7px;" />
+            <router-link to="/fund-wallet" class="">Buy</router-link>
+          </a>
+        </li>
+        <li @click="toggleMobileNav2">
+          <a>
+<!--            <i class='bx bx-support' ></i>-->
+            <img src="https://www.coinmama.com/next/icons/sell_white.svg" alt="" style="padding-right: 7px;" />
+            <router-link to="/withdrawal" class="">Sell</router-link>
+          </a>
+        </li>
+        <li @click="toggleMobileNav2">
+          <a>
+<!--            <i class='bx bx-line-chart' ></i>-->
+            <img src="https://www.coinmama.com/next/icons/transactions_white.svg" alt="" style="padding-right: 7px;" />
+            <router-link to="/transactions" class="">Transactions</router-link>
+          </a>
+        </li>
+        <li @click="toggleMobileNav2">
+          <a>
+<!--            <i class='bx bxs-briefcase' ></i>-->
+            <img src="https://www.coinmama.com/next/icons/academy_white.svg" alt="" style="padding-right: 7px;"/>
+            <router-link to="/wallets-management" class="">Wallets</router-link>
+          </a>
+        </li>
+        <li @click="toggleMobileNav2">
+          <a>
+<!--            <i class='bx bx-credit-card' ></i>-->
+            <img src="https://www.coinmama.com/next/icons/form_white.svg" alt="" style="padding-right: 7px;" />
+            <router-link to="/settings" class="">Settings</router-link>
+          </a>
+        </li>
+        <li @click="toggleMobileNav2">
+          <a>
+<!--            <i class='bx bxs-wallet' ></i>-->
+            <img src="https://www.coinmama.com/next/icons/privacy_policy_white.svg" alt="" style="padding-right: 7px;" />
+            <router-link to="" class="">Privacy Policy</router-link>
+          </a>
+        </li>
+        <li @click="handleClick">
+          <a>
+            <img src="https://www.coinmama.com/next/icons/log_out.svg" alt="" style="padding-right: 7px;" />
+            <p >Log Out</p>
+          </a>
+        </li>
+
+
+<!--        <button @click="handleClick" class="logout">Logout</button>-->
+      </ul>
+    </div>
+
+    <dash-content v-if="user">
+      <router-view v-slot="{ Component, route }">
+<!--        <transition name="route" mode="out-in">-->
+          <div :key="route.name">
+            <div class="icon">
+              <i @click="toggleMobileNav" class='bx bx-menu' v-show="mobile" :class="{'icon-active' : mobileNav}"></i>
+            </div>
+            <component :is="Component"></component>
+          </div>
+<!--        </transition>-->
+      </router-view>
+    </dash-content>
+
+    <div v-if="!user" class="final">
+      <router-link to="/login" class="back-login">Go Back To The Login Page</router-link>
+      <router-link to="/" class="back-home">Go Back To The Home Page</router-link>
+    </div>
+
+  </div>
+</template>
+
+<script>
+import { useStore } from 'vuex'
+import {computed} from "vue";
+import router from "@/router";
+import DashContent from "@/components/baseComponents/dash/DashContent.vue";
+
+export default {
+  name: "DashBoardSideBarView",
+  components: {DashContent},
+  setup() {
+    const store = useStore()
+    const handleClick = async () => {
+      await store.dispatch('logout')
+    }
+    router.push('/dashboard-side-bar')
+    return { handleClick,
+      user: computed(() => store.state.user),
+      authIsReady: computed(() => store.state.authIsReady)}
+  },
+  data()  {
+    return {
+      mobile: false,
+      mobileNav: false,
+      windowWidth: false,
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.checkScreen);
+    this.checkScreen();
+  },
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+    toggleMobileNav2(){
+      this.mobileNav = false;
+    },
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 2000){
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    }
+  }
+}
+</script>
+
+<style scoped>
+.outer{
+  display: flex;
+}
+
+body{
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.logo p {
+  color: #000;
+  font-size: 20px;
+  margin-left: 10%;
+  padding-top: 3px;
+}
+.logo select{
+  font-size: 15px;
+  margin-left: 8%;
+  padding: 5px 15px;
+  border-radius: 5px;
+  /*color: #F04438;*/
+  border: 1px solid #E8E8E8;
+}
+.sidebar{
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 235px;
+  background-color: rgb(43 101 232);
+  padding: 6px 20px 37px;
+}
+.sidebar ul li{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 5px 4px;
+  list-style: none;
+  line-height: 25px;
+}
+.sidebar ul li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  font-size: 16px;
+  padding-top: 3px;
+}
+.hover:hover{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3.5px);
+  padding: 8px;
+  border-radius: 4px;
+}
+.link-img{
+  margin-right: 5%;
+  width: 12%;
+}
+.links-name{
+  font-size: 16px;
+  color: #ffffff;
+}
+.wallets{
+  font-size: 15.5px;
+}
+.feature-card-1 p {
+  font-size: 17px;
+}
+.feature-card-2 p{
+  font-size: 17px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.5px solid rgba(255, 255, 255, 0.13);
+  border-radius: 3px;
+  padding: 2.5px 8px;
+  margin-right: 8px;
+}
+.feature-card-3 img{
+  margin-right: 7px;
+}
+.feature-card-3 p{
+  padding-top: 2px;
+}
+.logout span{
+  font-size: 16px;
+  padding-top: 10.5px;
+  padding-right: 2%;
+}
+.icon {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  height: 100%;
+}
+.icon i {
+  cursor: pointer;
+  font-size: 30px;
+  transition: 0.8s ease all;
+}
+.icon-active {
+  transform: rotate(360deg);
+}
+
+
+.logout span{
+  font-size: 16px;
+  padding-top: 10.5px;
+  padding-right: 10px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  height: 100%;
+  color: #000;
+  padding-top: 1.4%;
+}
+
+.icon i {
+  cursor: pointer;
+  font-size: 40px;
+  transition: 0.8s ease all;
+}
+
+.icon-active {
+  transform: rotate(360deg);
+}
+
+
+
+.links-name-separate span{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+
+.dropdown-nav-2{
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  /*padding-right: 7%;*/
+  height: 100vh;
+  width: 235px;
+  /*height: 100%;*/
+  --tw-bg-opacity: 1;
+  background-color: rgb(43 101 232/var(--tw-bg-opacity));
+  font-size: 16px;
+  text-align: center;
+}
+.dropdown-nav-2 li {
+  overflow: hidden;
+  list-style: none;
+  font-weight: bold;
+}
+.dropdown-nav-2 ul {
+  padding-top: 25%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.dropdown-nav-2 a {
+  padding: 0.7em 0;
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  letter-spacing: 1px;
+  margin: 0;
+  text-decoration: none;
+}
+.dropdown-nav-2 a:before,
+.dropdown-nav-2 a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.dropdown-nav-2 a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: #676767;
+  white-space: nowrap;
+}
+.dropdown-nav-2 li:hover a,
+.dropdown-nav-2.current a {
+  color: #ffffff;
+}
+.bx-menu{
+  font-size: 45px;
+  cursor: pointer;
+  transition: .8s ease all;
+  color: rgb(0, 0, 113);
+}
+.icon-active{
+  transform: rotate(180deg);
+}
+
+.final{
+  margin-left: 26%;
+  margin-top: 23%;
+  display: flex;
+}
+
+.back-login{
+  margin-right: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 8px;
+  color: #003a9a;
+}
+.back-home{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-left: 30px;
+  padding: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 8px;
+  color: #003a9a;
+}
+
+@media (max-width: 990px) {
+  .logout{
+    padding: 9px 60px;
+    margin-left: 15px;
+    margin-top: 13px;
+    border-radius: 20px;
+  }
+  .icon-2{
+    padding-left: 90%;
+    color: white;
+  }
+  i{
+    font-size: 20px;
+    padding-right: 5px;
+  }
+  .icon{
+    overflow-y: unset;
+  }
+
+  .final{
+    margin-left: 10%;
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 550px) {
+  .dropdown-nav-2{
+    padding-right: 5%;
+    max-width: 210px;
+    font-size: 15px;
+  }
+  .icon-2{
+    padding-left: 80%;
+  }
+  .dropdown-nav-2 ul {
+    padding-top: unset;
+  }
+  .logout{
+    padding: 8px 50px;
+  }
+  .final{
+    margin-left: 21%;
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .back-login{
+    margin-right: unset;
+    padding: 25px;
+    font-size: 18px;
+    margin-bottom: 15%;
+  }
+  .back-home{
+    margin-left: unset;
+    padding: 25px;
+    font-size: 18px;
+  }
+
+  .bx-user{
+    font-size: 300%;
+    margin-left: 10%;
+  }
+
+}
+
+
+</style>
+
