@@ -78,7 +78,7 @@ export default {
   components: {FundWalletModal2, FundWalletModal},
   data() {
     return {
-      dialogIsVisible: true,
+      dialogIsVisible: false,
       // dialogIsVisible2: false,
       dialogIsVisible3: false,
       deposit: 0,
