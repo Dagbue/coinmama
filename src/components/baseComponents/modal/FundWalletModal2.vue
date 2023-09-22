@@ -327,5 +327,8 @@ input{
   p{
     font-size: unset;
   }
+  .text-5{
+    font-size: 15px;
+  }
 }
 </style>

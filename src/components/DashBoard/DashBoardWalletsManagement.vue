@@ -8,7 +8,10 @@
         <form>
           <div class="bank-trans">
             <div class="bank-trans-header">Account Total assets</div>
-            <p class="total-amount">$ {{ this.contacts.deposit + this.contacts.profits + this.contacts.bonusMain + this.contacts.bonus - this.contacts.withdrawal  }}</p>
+            <div>
+              <p v-if="approved === 'approved'" class="total-amount">$ {{ this.contacts.deposit + this.contacts.profits + this.contacts.bonusMain + this.contacts.bonus - this.contacts.withdrawal  }}</p>
+              <p v-else class="total-amount">Pending...</p>
+            </div>
 
             <div class="seprate-alpha">
 
@@ -32,13 +35,19 @@
           <div class="bank-trans-2">
             <div class="bank-trans-header">Bitcoin</div>
             <div class="bank-trans-form">
-              <p class="total-amount-2">$ {{ this.contacts.deposit + this.contacts.profits + this.contacts.bonusMain + this.contacts.bonus - this.contacts.withdrawal  }}</p>
+              <div>
+                <p v-if="approved === 'approved'" class="total-amount-2">$ {{ this.contacts.deposit + this.contacts.profits + this.contacts.bonusMain + this.contacts.bonus - this.contacts.withdrawal  }}</p>
+                <p v-else class="total-amount-2">Pending...</p>
+              </div>
             </div>
             <div class="seprate-alpha-2">
 
               <div class="seprate-2">
                 <p>Available</p>
-                <p>$ {{ this.contacts.deposit + this.contacts.profits + this.contacts.bonusMain + this.contacts.bonus - this.contacts.withdrawal  }}</p>
+                <div>
+                  <p v-if="approved === 'approved'">$ {{ this.contacts.deposit + this.contacts.profits + this.contacts.bonusMain + this.contacts.bonus - this.contacts.withdrawal  }}</p>
+                  <p v-else >Pending...</p>
+                </div>
               </div>
 
               <div class="seprate-2">
@@ -56,13 +65,19 @@
           <div class="bank-trans-2">
             <div class="bank-trans-header">Ethereum</div>
             <div class="bank-trans-form">
-              <p class="total-amount-2">$ 0</p>
+              <div>
+                <p v-if="approved === 'approved'" class="total-amount-2">$ 0</p>
+                <p v-else class="total-amount-2">Pending...</p>
+              </div>
             </div>
             <div class="seprate-alpha-2">
 
               <div class="seprate-2">
                 <p>Available</p>
-                <p>0</p>
+                <div>
+                  <p v-if="approved === 'approved'" >0</p>
+                  <p v-else >Pending...</p>
+                </div>
               </div>
 
               <div class="seprate-2">
@@ -80,13 +95,19 @@
           <div class="bank-trans-2">
             <div class="bank-trans-header">USDT</div>
             <div class="bank-trans-form">
-              <p class="total-amount-2">$ 0</p>
+              <div>
+                <p v-if="approved === 'approved'" class="total-amount-2">$ 0</p>
+                <p v-else class="total-amount-2">Pending...</p>
+              </div>
             </div>
             <div class="seprate-alpha-2">
 
               <div class="seprate-2">
                 <p>Available</p>
-                <p>0</p>
+                <div>
+                  <p v-if="approved === 'approved'" >0</p>
+                  <p v-else >Pending...</p>
+                </div>
               </div>
 
               <div class="seprate-2">

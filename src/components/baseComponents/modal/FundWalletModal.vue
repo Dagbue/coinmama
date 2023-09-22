@@ -183,20 +183,24 @@ button:hover{
 }
 @media (max-width: 500px) {
   dialog {
-    top: 15vh;
+    top: 7.8vh;
     width: 27rem;
     height: 20rem;
-    left: calc(50% - 12.2rem);
+    left: calc(50% - 12rem);
     right: 30px;
   }
   .alpha{
     width: 385px;
+    height: 695px;
   }
   h3{
     font-size: 20px;
   }
   p{
     font-size: unset;
+  }
+  .text-5{
+    font-size: 15px;
   }
 }
 </style>

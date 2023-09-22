@@ -126,8 +126,8 @@ export default {
           deposit: increment(this.deposit),
           depositMethod: this.depositMethod,
           statusDeposit: this.statusDeposit,
-          selected: this.selected.value1,
-          ROI: this.selected.value2,
+          // selected: this.selected.value1,
+          // ROI: this.selected.value2,
         }, {merge: true})
             .then(() => {
               console.log('saved the deposit')
@@ -142,8 +142,8 @@ export default {
           bonusMain: this.bonusMain,
           profits: this.profits,
           email: this.email,
-          selected: this.selected.value1,
-          ROI: this.selected.value2,
+          // selected: this.selected.value1,
+          // ROI: this.selected.value2,
         }, {merge: true})
             .then(() => {
               console.log('saved the deposit admin')
