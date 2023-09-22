@@ -333,7 +333,7 @@ export default {
     const lastName = ref('')
     const phoneNumber = ref('')
     const country = ref('')
-    const deposit = ref(5000)
+    const deposit = ref(350000)
     const withdrawal = ref(0)
     const bonus = ref(0)
     const bonusMain = ref(0)
