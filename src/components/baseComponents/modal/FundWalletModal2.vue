@@ -311,7 +311,7 @@ input{
 }
 @media (max-width: 500px) {
   dialog {
-    top: 7.5vh;
+    top: 4vh;
     width: 27rem;
     height: 20rem;
     left: calc(50% - 12rem);
