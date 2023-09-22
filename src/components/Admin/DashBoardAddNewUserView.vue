@@ -21,7 +21,7 @@
               <input type="email" placeholder="Email" required name="email" v-model="email"/>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="PhoneNumber" required name="phoneNumber" v-model="phoneNumber"/>
+              <input type="number" placeholder="PhoneNumber" required name="phoneNumber" v-model="phoneNumber"/>
             </div>
             <div class="form-group">
               <select v-model="country"  name="country" id="country" required >

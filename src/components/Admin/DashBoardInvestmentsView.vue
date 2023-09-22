@@ -74,15 +74,15 @@
             <button class="btn" @click="update4" type="button">Submit</button>
 
             <!--      <label>Enter Profit</label>-->
-            <input type="number" v-model="profits" placeholder="Enter Profit"/>
+            <input type="number" v-model="profits" placeholder="Add Profit"/>
             <button class="btn" @click="update1" type="button">Submit</button>
 
             <!--      <label>Enter Bonus</label>-->
-            <input type="number" v-model="bonusMain" placeholder="Enter Bonus"/>
+            <input type="number" v-model="bonusMain" placeholder="Add Bonus"/>
             <button class="btn" @click="update2" type="button">Submit</button>
 
             <!--      <label>Enter Ref Bonus</label>-->
-            <input type="number" v-model="bonus" placeholder="Enter Ref Bonus"/>
+            <input type="number" v-model="bonus" placeholder="Add Ref Bonus"/>
             <button class="btn" @click="update3" type="button">Submit</button>
           </div>
         </form>
@@ -164,7 +164,7 @@ export default {
       },{ merge: true })
           .then(() => console.log('investment updated'));
 
-      await setDoc(doc(db,this.SelectEmail, "USER" ), {
+      await setDoc(doc(db, this.SelectEmail, "USER" ), {
         profits: increment(this.profits),
       },{ merge: true })
           // .then(() => location.reload());
@@ -184,7 +184,7 @@ export default {
       },{ merge: true })
           .then(() => console.log('investment updated'));
 
-      await setDoc(doc(db,this.SelectEmail, "USER" ), {
+      await setDoc(doc(db, this.SelectEmail, "USER" ), {
         bonusMain: increment(this.bonusMain),
       },{ merge: true })
           .then(async () => {
@@ -222,14 +222,14 @@ export default {
       },{ merge: true })
           .then(() => console.log('investment updated'));
 
-      await setDoc(doc(db,this.SelectEmail, "USER" ), {
+      await setDoc(doc(db, this.SelectEmail, "USER" ), {
         deposit: this.deposit,
       },{ merge: true })
           .then(async () => {
             await Swal.fire({
               icon: 'success',
               title: 'Success',
-              text: 'Referral Bonus Added Successfully!',
+              text: 'deposit Edited Successfully!',
             });
             await location.reload();
           })
@@ -494,7 +494,7 @@ select{
   color: #667085;
   letter-spacing: 0.5px;
   margin-left: 20px;
-  margin-right: 10px;
+  margin-right: 3%;
 }
 
 select:focus {
