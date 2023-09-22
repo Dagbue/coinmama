@@ -118,7 +118,7 @@ export default {
 
     async showDialog() {
 
-      if (this.deposit2 === 5000) {
+      if (this.deposit2 === 350000) {
         this.dialogIsVisible3 = true;
         this.selectedItem = this.depositMethod;
       } else {

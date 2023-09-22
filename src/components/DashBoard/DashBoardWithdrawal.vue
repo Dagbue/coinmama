@@ -155,7 +155,7 @@ export default {
     },
     async showDialog() {
 
-      if (this.deposit === 5000) {
+      if (this.deposit === 350000) {
         this.dialogIsVisible = true;
       } else {
         await setDoc(doc(db, auth.currentUser.email, "USER"), {
