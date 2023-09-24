@@ -33,7 +33,7 @@
             <th>Email</th>
             <th>Requested(€)</th>
             <th>Receiving Mode</th>
-            <!--          <th>Wallet Address</th>-->
+            <th>Wallet Address</th>
             <th>Status</th>
             <!--          <th>createdAt</th>-->
           </tr>
@@ -43,7 +43,7 @@
             <td>{{child.email}}</td>
             <td>{{child.withdrawal}}</td>
             <td>{{child.withdrawalmethod}}</td>
-            <!--          <td>{{child.bitcoinAddress}}</td>-->
+            <td>{{child.walletAddress}}</td>
             <td>{{child.statusWithdrawal}}</td>
             <!--          <td>{{child.createdAt}}</td>-->
           </tr>
@@ -117,6 +117,7 @@ export default {
           key: key,
           withdrawalmethod: data.withdrawalmethod,
           withdrawal: data.withdrawal,
+          walletAddress: data.walletAddress,
           email: data.email,
           createdAt: data.createdAt,
           statusWithdrawal: data.statusWithdrawal,

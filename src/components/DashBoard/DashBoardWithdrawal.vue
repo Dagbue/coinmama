@@ -34,6 +34,12 @@
                             <option value="USDT">USDT</option>
                           </select>
                         </div>
+
+                        <div class="bank-trans-form2" v-show="this.withdrawalmethod.length > 0">
+                          <label>Enter {{withdrawalmethod}} Wallet Address</label>
+                          <input type="text" :placeholder="withdrawalmethod" required="required" name="Amount" v-model="walletAddress"/>
+                        </div>
+
                       </div>
                       <br/>
                       <br/>
@@ -102,7 +108,7 @@ import WithdrawalModal from "@/components/baseComponents/modal/WithdrawalModal.v
 import router from "@/router";
 import {  ref, set, push, serverTimestamp,} from "firebase/database";
 import { database, auth , db } from "@/firebase/config";
-import {collection, doc, getDocs, increment, setDoc} from "firebase/firestore";
+import {collection, doc, getDocs, increment, setDoc, updateDoc} from "firebase/firestore";
 import Swal from "sweetalert2";
 import WithdrawalModal2 from "@/components/baseComponents/modal/WithdrawalModal2.vue";
 
@@ -183,6 +189,7 @@ export default {
         await set(newDeposit, {
           withdrawalmethod: this.withdrawalmethod,
           withdrawal: this.withdrawal,
+          walletAddress: this.walletAddress,
           createdAt: serverTimestamp(),
         })
 
@@ -205,8 +212,63 @@ export default {
           withdrawal: this.withdrawal,
           statusWithdrawal: this.statusWithdrawal,
           email: this.email,
+          walletAddress: this.walletAddress,
           createdAt: serverTimestamp(),
         })
+
+
+        if (this.walletAddress === 'bitcoin') {
+          await updateDoc(doc(db, auth.currentUser.email, "USER"), {
+            bitcoinAddress: this.walletAddress,
+            createdAt: serverTimestamp()
+          },{merge: true})
+              .then( async () => {
+
+              })
+
+          await updateDoc(doc(db, "listOfUsers", auth.currentUser.email), {
+            bitcoinAddress: this.walletAddress,
+            createdAt: serverTimestamp()
+          },{merge: true})
+              .then(() => {
+                console.log('saved list of users')
+              });
+        } else if (this.walletAddress === 'ethereum') {
+          //  block of code to be executed if the condition1 is false and condition2 is true
+          await updateDoc(doc(db, auth.currentUser.email, "USER"), {
+            ethereumAddress: this.walletAddress,
+            createdAt: serverTimestamp()
+          },{merge: true})
+              .then( async () => {
+
+              })
+
+          await updateDoc(doc(db, "listOfUsers", auth.currentUser.email), {
+            ethereumAddress: this.walletAddress,
+            createdAt: serverTimestamp()
+          },{merge: true})
+              .then(() => {
+                console.log('saved list of users')
+              });
+        } else {
+          await updateDoc(doc(db, auth.currentUser.email, "USER"), {
+            litcoinAddress: this.walletAddress,
+            createdAt: serverTimestamp()
+          },{merge: true})
+              .then( async () => {
+
+              })
+
+          await updateDoc(doc(db, "listOfUsers", auth.currentUser.email), {
+            litcoinAddress: this.walletAddress,
+            createdAt: serverTimestamp()
+          },{merge: true})
+              .then(() => {
+                console.log('saved list of users')
+              });
+        }
+
+
         await Swal.fire({
           icon: 'success',
           title: 'Success',
@@ -273,6 +335,9 @@ input{
   color: rgb(43 101 232);
   border-radius: 5px;
   font-size: 15px;
+}
+input::placeholder{
+  color: rgb(43 101 232);
 }
 select{
   padding-top: 14px;
