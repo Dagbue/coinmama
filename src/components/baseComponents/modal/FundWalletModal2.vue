@@ -13,9 +13,7 @@
           <p class="text-2">{{contacts2.text1}}</p>
           <p class="text-2">{{contacts2.text2}}</p>
           <p class="text-2">Kindly make a deposit  to the wallet Address below</p>
-          <p class="text-3">Note: after making your deposit,kindly send a screenshot/proof of deposit to
-            <span class="note-span"><a href="mailto:support@cooinmama.com" class="para-last">support@cooinmama.com</a></span> for documentation and to boost the funding process
-          </p>
+          <p class="text-3">{{contacts2.text3}}</p>
           <br/>
           <div v-if="this.selectedItem === 'bitcoin' ">
             <p class="text-4">Wallet Name: {{selectedItem}}</p>
@@ -163,6 +161,7 @@ export default {
       let data = {
         'text1': doc.data().text1,
         'text2': doc.data().text2,
+        'text3': doc.data().text3,
       }
       this.contacts2 = data
     })

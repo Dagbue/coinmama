@@ -32,7 +32,7 @@
           <tr>
             <th>First Line</th>
             <th>Second Line</th>
-<!--            <th>Deposit</th>-->
+            <th>Third Line</th>
 <!--            <th>Profits</th>-->
 <!--            <th>Bonus</th>-->
 <!--            <th>Ref Bonus</th>-->
@@ -43,7 +43,7 @@
           <tr>
             <td>{{contacts.text1}}</td>
             <td>{{contacts.text2}}</td>
-<!--            <td>$ {{ child.deposit }}</td>-->
+            <td>{{contacts.text3}}</td>
 <!--            <td>$ {{child.profits}}</td>-->
 <!--            <td>$ {{child.bonusMain}}</td>-->
 <!--            <td>$ {{child.bonus}}</td>-->
@@ -67,6 +67,9 @@
 
             <input type="text" v-model="text2" placeholder="Enter Second Line"/>
             <button class="btn" @click="update2" type="button">Submit</button>
+
+            <input type="text" v-model="text3" placeholder="Enter Third Line"/>
+            <button class="btn" @click="update3" type="button">Submit</button>
 
           </div>
         </form>
@@ -93,7 +96,8 @@ export default {
       itemsPerPage: 9,
       deposit:"",
       text1: "",
-      text2: ""
+      text2: "",
+      text3: ""
     }
   },
   computed:{
@@ -112,6 +116,7 @@ export default {
       let data = {
         'text1': doc.data().text1,
         'text2': doc.data().text2,
+        'text3': doc.data().text3,
       }
       this.contacts = data
     })
@@ -155,6 +160,20 @@ export default {
     async update2() {
       await setDoc(doc(db, "FundWalletModals" , "FirstLine" ), {
         text2: this.text2,
+      },{ merge: true })
+          .then(async () => {
+            await Swal.fire({
+              icon: 'success',
+              title: 'Success',
+              text: 'Edited Successfully!',
+            });
+            await location.reload();
+          })
+    },
+
+    async update3() {
+      await setDoc(doc(db, "FundWalletModals" , "FirstLine" ), {
+        text3: this.text3,
       },{ merge: true })
           .then(async () => {
             await Swal.fire({
