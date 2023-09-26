@@ -17,7 +17,7 @@
           <br/>
           <div v-if="this.selectedItem === 'bitcoin' ">
             <p class="text-4">Wallet Name: {{selectedItem}}</p>
-            <p class="text-5">Wallet Address: bc1qfehv6n8ef5x8l0pr8g0u9x9dkkj490wawqkjch</p>
+            <p class="text-5">Wallet Address: bc1q47cvp688vwrregzamkgmfdjmctqeq0e30c4u34</p>
             <img src="@/assets/bitcoin.jpeg" alt="barcode" class="barcode"/>
           </div>
 
