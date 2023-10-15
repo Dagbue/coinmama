@@ -30,7 +30,7 @@
 
 
         <br/>
-        <button>Copy</button>
+        <button @click="copyToClipboard('bc1q47cvp688vwrregzamkgmfdjmctqeq0e30c4u34')">Copy</button>
 
       </div>
 
@@ -137,7 +137,21 @@ export default {
         title: 'Success',
         text: 'Deposit Request Sent!',
       });
-    }
+    },
+
+    copyToClipboard(content) {
+      const textarea = document.createElement('textarea')
+      textarea.value = content
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Copied to Clipboard',
+      });
+    },
   },
 
   async created() {
