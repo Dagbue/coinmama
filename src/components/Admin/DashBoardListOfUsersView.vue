@@ -32,10 +32,10 @@
           <tr>
             <th>Email</th>
             <th>Password</th>
-            <th>Btc</th>
-            <th>Eth</th>
-            <th>Usdt</th>
-            <th>Date Created</th>
+            <th>BTC</th>
+            <th>ETH</th>
+            <th>USDT</th>
+<!--            <th>Date Created</th>-->
           </tr>
 
           <tbody v-for="child in paginatedItems" :key="child.key">
@@ -45,7 +45,7 @@
             <td>{{child.bitcoinAddress}}</td>
             <td>{{child.ethereumAddress}}</td>
             <td>{{child.litcoinAddress}}</td>
-            <td>{{child.createdAt.toDate().toDateString()}}</td>
+<!--            <td>{{child.createdAt.toString().toLocaleString()}}</td>-->
           </tr>
           </tbody>
 
