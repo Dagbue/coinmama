@@ -43,7 +43,7 @@
                       </div>
                       <br/>
                       <br/>
-                      <input type="submit"  class="bank-trans-btn" placeholder="Enter Amount" />
+                      <input type="submit" value="Withdraw"  class="bank-trans-btn" placeholder="Enter Amount" />
                     </form>
             <br/>
             <div class="icon-part">
